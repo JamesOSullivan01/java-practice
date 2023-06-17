@@ -10,7 +10,18 @@ public class main {
         }
         int health = 100;
         if ((health < 25) && (highScore > 1000)) {
-            highScore =    highScore - 1000;
+            highScore = highScore - 1000;
+        }
+
+        int myVariable = 50;
+        // semicolon makes it a statement
+        myVariable++;
+        myVariable--;
+
+        System.out.println("This is a test");
+        if (myVariable == 0){
+            System.out.println("It's now zero");
         }
     }
+
 }

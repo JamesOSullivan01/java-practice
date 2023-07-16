@@ -146,11 +146,11 @@ public class JavaLogicPractice {
     }
 
 
-//public class Ascii {
-  public static char getChar(int c) {
-    char asciiToChar = (char) c;
-    return asciiToChar;
-  }
+    //public class Ascii {
+    public static char getChar(int c) {
+        char asciiToChar = (char) c;
+        return asciiToChar;
+    }
 
 //    Numbers ending with zeros are boring.
 //
@@ -176,10 +176,49 @@ public class JavaLogicPractice {
         }
     }
 
+//    There was a test in your class and you passed it. Congratulations!
+//    But you're an ambitious person. You want to know if you're better than the average student in your class.
+//
+//    You receive an array with your peers' test scores. Now calculate the average and compare your score!
+//
+//    Return True if you're better, else False!
+//
+//    Note:
+//    Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
 
+    public class Kata {
+        public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+            int sumOfClassGrades = 0;
+            for (int i = 0; i < classPoints.length; i++) {
+                sumOfClassGrades += classPoints[i];
+            }
+            int result = sumOfClassGrades / classPoints.length;
+            return yourPoints > result;
+        }
 
+//        Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+//
+//        Note: input will never be an empty string
 
+        public class FakeBinary {
+            public static String fakeBin(String numberString) {
 
+                StringBuilder result = new StringBuilder();
+
+                for (char c : numberString.toCharArray()) {
+                    int digit = Character.getNumericValue(c);
+                    if (digit < 5) {
+                        result.append(0);
+                    } else {
+                        result.append(1);
+                    }
+                }
+
+                return result.toString();
+
+            }
+        }
+    }
 }
 
 

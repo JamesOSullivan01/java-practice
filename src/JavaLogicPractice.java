@@ -108,8 +108,80 @@ public class JavaLogicPractice {
 //            return "Position of alphabet: " + ((int) alphabet - 96);
 //        }
 
-//     public static String position(char alphabet){
+    //     public static String position(char alphabet){
 //    return String.format("Position of alphabet: %d", Integer.valueOf(alphabet) - 96);
 //  }
+//***
+//    A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+//
+//    Return true if yes, false otherwise :)
+    public static boolean hero(int bullets, int dragons) {
+        int bulletsNeededToKillDragons = dragons * 2;
+        return bullets >= bulletsNeededToKillDragons;
+    }
+
+//Issue
+//Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
+//The pipes connecting your level's stages together need to be fixed before you receive any more complaints.
+//Pipes list is correct when each pipe after the first index is greater (+1) than the previous one, and that there is no duplicates.
+
+//Task
+//Given the a list of numbers, return a fixed list so that the values increment by 1 for each index from the minimum value up to the maximum value (both included).
+//
+//Example
+//    Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
+
+
+    public static int[] pipeFix(int[] numbers) {
+        int minNumInArray = numbers[0];
+        int maxNumInArray = numbers[numbers.length - 1];
+        int totalElementsInArray = maxNumInArray - minNumInArray + 1;
+        int[] newArray = new int[totalElementsInArray];
+
+        for (int i = 0; i < totalElementsInArray; i++) {
+            int currentElement = minNumInArray + i;
+            newArray[i] = currentElement;
+        }
+        return newArray;
+    }
+
+
+//public class Ascii {
+  public static char getChar(int c) {
+    char asciiToChar = (char) c;
+    return asciiToChar;
+  }
+
+//    Numbers ending with zeros are boring.
+//
+//    They might be fun in your world, but not here.
+//
+//    Get rid of them. Only the ending ones.
+//
+//            1450 -> 145
+//            960000 -> 96
+//            1050 -> 105
+//            -1050 -> -105
+//    Zero alone is fine, don't worry about it. Poor guy anyway
+
+    public class NoBoring {
+        public static int noBoringZeros(int n) {
+            if (n == 0) {
+                return 0;
+            }
+            while (n % 10 == 0) {
+                n /= 10;
+            }
+            return n;
+        }
+    }
+
+
+
+
 
 }
+
+
+
+

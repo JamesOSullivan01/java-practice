@@ -218,6 +218,39 @@ public class JavaLogicPractice {
 
             }
         }
+
+//        Given the total number of rows and columns in the theater (nRows and nCols, respectively), and the row and column you're sitting in, return the number of people who sit strictly behind you and in your column or to the left, assuming all seats are occupied.
+//
+//        Example
+//        For nCols = 16, nRows = 11, col = 5 and row = 3, the output should be 96.
+
+        public static int seatsInTheater(int nCols, int nRows, int col, int row) {
+
+            int colsToTheLeftOfMe = nCols - col + 1;
+            int rowsBehindMe = nRows - row;
+           return colsToTheLeftOfMe * rowsBehindMe;
+
+
+
+        }
+
+//        Debugging sayHello function
+//        The starship Enterprise has run into some problem when creating a program to greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+//
+//        Example output:
+//
+//        Hello, Mr. Spock
+
+        public class GrassHopper {
+            public static String sayHello(String name) {
+
+                StringBuilder newString = new StringBuilder();
+
+                newString.append("Hello, " + name);
+
+                return newString.toString();
+            }
+        }
     }
 }
 

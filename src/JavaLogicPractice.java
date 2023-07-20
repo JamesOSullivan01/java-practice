@@ -251,6 +251,65 @@ public class JavaLogicPractice {
                 return newString.toString();
             }
         }
+
+//        Write a function to split a string and convert it into an array of words.
+        public class Solution {
+
+            public static String[] stringToArray(String s) {
+
+                String[] splitArray = s.split(" ");
+                return splitArray;
+            }
+        }
+
+        public static String findNeedle(Object[] haystack) {
+
+            for (int i = 0; i < haystack.length; i++) {
+                if (haystack[i] == "needle") {
+                    return "found the needle at position " + i;
+                }
+            }
+            return "needle be lost, yo";
+        }
+
+//        public static String findNeedle(Object[] haystack) {
+//            return String.format("found the needle at position %d", java.util.Arrays.asList(haystack).indexOf("needle"));
+//        }
+
+
+//        Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+//        For example:
+//        a = 1
+//        b = 4
+//                --> [1, 2, 3, 4]
+
+        public static int[] between(int a, int b) {
+            int numberOfElementsInArray = b - a;
+            int[] arr = new int[numberOfElementsInArray + 1];
+
+            for (int i = a; i <= b; i++) {
+                arr[i - a] = i;
+            }
+
+            return arr;
+        }
+//Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+//
+//The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise.
+
+        public static boolean setAlarm(boolean employed, boolean vacation) {
+            return employed && !vacation;
+        }
+
+//        Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+//
+//        Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+        public static int paperWork(int n, int m)
+        {
+            return (n < 0) || (m < 0) ? 0 : n * m;
+            //Happy Coding! ^_^
+        }
+    }
     }
 }
 

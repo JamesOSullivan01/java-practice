@@ -301,6 +301,9 @@ public class JavaLogicPractice {
             return employed && !vacation;
         }
 
+
+
+
 //        Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
 //
 //        Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
@@ -310,8 +313,101 @@ public class JavaLogicPractice {
             //Happy Coding! ^_^
         }
     }
+//    Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+    public static String smash(String... words) {
+        StringBuilder bucket = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
+            bucket.append(words[i]);
+            if (i < words.length - 1) {
+                bucket.append(" ");
+            }
+        }
+        return bucket.toString();
     }
+
+    public class BooleanToString {
+        public static String convert(boolean b) {
+
+            String newString = String.valueOf(b);
+
+            return newString;
+        }
+    }
+
+//    Implement a function which convert the given boolean value into its string representation.
+//
+//Note: Only valid inputs will be given.
+
+    public static String convert(boolean b) {
+
+        String newString = String.valueOf(b);
+
+        return newString;
+    }
+
+
+//Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+    public int countSheeps(Boolean[] arrayOfSheeps) {
+        int counter = 0;
+        for (Boolean sheep : arrayOfSheeps) {
+            if (sheep == null) {
+                continue;
+            }
+            if (sheep) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    // Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+    public static String shortcut(String input) {
+        StringBuilder newString = new StringBuilder();
+
+        char[] ch = input.toCharArray();
+
+        for (int i = 0; i < ch.length; i++) {
+            if (ch[i] == 'a' || ch[i] == 'e' || ch[i] == 'i' || ch[i] == 'o' || ch[i] == 'u') {
+                continue;
+            } newString.append(ch[i]);
+        }
+
+        return newString.toString();
+    }
+
+//      public static String shortcut(String input) {
+//    return input.replaceAll("[aeiou]", "");
+//  }
+
+//    Write function bmi that calculates body mass index (bmi = weight / height2).
+//            if bmi <= 18.5 return "Underweight"
+//            if bmi <= 25.0 return "Normal"
+//            if bmi <= 30.0 return "Overweight"
+//            if bmi > 30 return "Obese"
+
+    public class Calculate {
+        public static String bmi(double weight, double height) {
+
+            double calculatedBmi = weight / (height * height);
+
+            if (calculatedBmi <= 18.5) {
+                return "Underweight";
+            } else if (calculatedBmi <= 25.0) {
+                return "Normal";
+            } else if (calculatedBmi <= 30.0) {
+                return "Overweight";
+            } else {
+                return "Obese";
+            }
+        }
+    }
+
+
 }
+
 
 
 

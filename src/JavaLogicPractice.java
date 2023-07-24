@@ -1,5 +1,8 @@
 package src;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JavaLogicPractice {
     //    In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
     public static String highAndLow(String numbers) {
@@ -405,6 +408,45 @@ public class JavaLogicPractice {
         }
     }
 
+    //Given an array of integers your solution should find the smallest integer.
+    public static int findSmallestInt(int[] args) {
+
+        int smallestInt = args[0];
+        for(int i = 0; i < args.length; i++) {
+            if (args[i] < smallestInt){
+                smallestInt = args[i];
+            }
+        }
+        return smallestInt;
+    }
+
+//    Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+        public static String boolToWord(boolean b)
+        {
+            return (b) ? "Yes" : "No";
+        }
+
+
+// Very simple, given an integer or a floating-point number, find its opposite.
+
+    public static int opposite(int number){
+        return number * -1;
+    }
+
+//    Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+
+    public static int summation(int n) {
+        int sum = 0;
+
+        List<Integer> numbers = new ArrayList<Integer>();
+        for(int i =0; i <= n; i++) {
+            numbers.add(i);
+        } for(int j = 0; j < numbers.size(); j++){
+            sum += numbers.get(j);
+        }
+        return sum;
+    }
 
 }
 

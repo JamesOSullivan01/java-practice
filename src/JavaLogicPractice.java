@@ -448,6 +448,55 @@ public class JavaLogicPractice {
         return sum;
     }
 
+//Build a function that returns an array of integers from n to 1 where n>0.
+//
+//Example : n=5 --> [5,4,3,2,1]
+    public static int[] reverse(int n){
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int i = n; i >= 1; i--){
+            numbers.add(i);
+        }
+        int[] array = new int[numbers.size()];
+
+        for (int i = 0; i < numbers.size(); i++) {
+            array[i] = numbers.get(i);
+        }
+        return array;
+    }
+
+// ****
+//public static int[] reverse(int n){
+//    int[] res = new int[n];
+//    for (int i=0; i<n; i++)
+//        res[i]=n-i;
+//    return res;
+//}
+
+//Your task is to create a function that does four basic mathematical operations.
+//
+//The function should take three arguments - operation(string/char), value1(number), value2(number).
+//The function should return result of numbers after applying the chosen operation.
+//
+//Examples(Operator, value1, value2) --> output
+
+    public static Integer basicMath(String op, int v1, int v2)
+    {
+        switch (op) {
+            case "-":
+                return v1 - v2;
+            case "+":
+                return v1 + v2;
+            case "*":
+                return v1 * v2;
+            case "/": {
+                if (v2 == 0)
+                    throw new IllegalArgumentException("Division by zero");
+                return v1 / v2;
+            }
+            default:
+                throw new IllegalArgumentException("Unknown operation: " + op);
+        }
+    }
 }
 
 

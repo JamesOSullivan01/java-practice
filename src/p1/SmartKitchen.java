@@ -2,6 +2,8 @@ package src.p1;
 
 public class SmartKitchen {
 
+    // with composition, when using fields that are other classes make sure the types are the same as ilustrated below.
+
     private CoffeeMaker brewMaster;
     private Refrigerator iceBox;
 

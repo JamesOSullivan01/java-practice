@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class JavaLogicPractice {
@@ -231,8 +232,7 @@ public class JavaLogicPractice {
 
             int colsToTheLeftOfMe = nCols - col + 1;
             int rowsBehindMe = nRows - row;
-           return colsToTheLeftOfMe * rowsBehindMe;
-
+            return colsToTheLeftOfMe * rowsBehindMe;
 
 
         }
@@ -255,7 +255,7 @@ public class JavaLogicPractice {
             }
         }
 
-//        Write a function to split a string and convert it into an array of words.
+        //        Write a function to split a string and convert it into an array of words.
         public class Solution {
 
             public static String[] stringToArray(String s) {
@@ -305,13 +305,10 @@ public class JavaLogicPractice {
         }
 
 
-
-
-//        Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+        //        Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
 //
 //        Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
-        public static int paperWork(int n, int m)
-        {
+        public static int paperWork(int n, int m) {
             return (n < 0) || (m < 0) ? 0 : n * m;
             //Happy Coding! ^_^
         }
@@ -375,7 +372,8 @@ public class JavaLogicPractice {
         for (int i = 0; i < ch.length; i++) {
             if (ch[i] == 'a' || ch[i] == 'e' || ch[i] == 'i' || ch[i] == 'o' || ch[i] == 'u') {
                 continue;
-            } newString.append(ch[i]);
+            }
+            newString.append(ch[i]);
         }
 
         return newString.toString();
@@ -412,24 +410,23 @@ public class JavaLogicPractice {
     public static int findSmallestInt(int[] args) {
 
         int smallestInt = args[0];
-        for(int i = 0; i < args.length; i++) {
-            if (args[i] < smallestInt){
+        for (int i = 0; i < args.length; i++) {
+            if (args[i] < smallestInt) {
                 smallestInt = args[i];
             }
         }
         return smallestInt;
     }
 
-//    Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
-        public static String boolToWord(boolean b)
-        {
-            return (b) ? "Yes" : "No";
-        }
+    //    Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+    public static String boolToWord(boolean b) {
+        return (b) ? "Yes" : "No";
+    }
 
 
 // Very simple, given an integer or a floating-point number, find its opposite.
 
-    public static int opposite(int number){
+    public static int opposite(int number) {
         return number * -1;
     }
 
@@ -440,20 +437,21 @@ public class JavaLogicPractice {
         int sum = 0;
 
         List<Integer> numbers = new ArrayList<Integer>();
-        for(int i =0; i <= n; i++) {
+        for (int i = 0; i <= n; i++) {
             numbers.add(i);
-        } for(int j = 0; j < numbers.size(); j++){
+        }
+        for (int j = 0; j < numbers.size(); j++) {
             sum += numbers.get(j);
         }
         return sum;
     }
 
-//Build a function that returns an array of integers from n to 1 where n>0.
+    //Build a function that returns an array of integers from n to 1 where n>0.
 //
 //Example : n=5 --> [5,4,3,2,1]
-    public static int[] reverse(int n){
+    public static int[] reverse(int n) {
         ArrayList<Integer> numbers = new ArrayList<>();
-        for (int i = n; i >= 1; i--){
+        for (int i = n; i >= 1; i--) {
             numbers.add(i);
         }
         int[] array = new int[numbers.size()];
@@ -479,8 +477,7 @@ public class JavaLogicPractice {
 //
 //Examples(Operator, value1, value2) --> output
 
-    public static Integer basicMath(String op, int v1, int v2)
-    {
+    public static Integer basicMath(String op, int v1, int v2) {
         switch (op) {
             case "-":
                 return v1 - v2;
@@ -497,7 +494,81 @@ public class JavaLogicPractice {
                 throw new IllegalArgumentException("Unknown operation: " + op);
         }
     }
+
+    //    I'm new to coding and now I want to get the sum of two arrays... Actually the sum of all their elements. I'll appreciate for your help.
+//
+//P.S. Each array includes only integer numbers. Output is a number too.
+    public static int arrayPlusArray(int[] arr1, int[] arr2) {
+        int sum = 0;
+
+        // Calculate the sum of elements in arr1
+        for (int i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+        }
+
+        // Calculate the sum of elements in arr2
+        for (int i = 0; i < arr2.length; i++) {
+            sum += arr2[i];
+        }
+
+        return sum;
+    }
+
+
+    public static boolean validateHello(String greetings) {
+        String greeting1 = greetings.toLowerCase();
+        if (greeting1.equals("hallo") ||
+                greeting1.equals("ciao") ||
+                greeting1.equals("salut") ||
+                greeting1.equals("hallo") ||
+                greeting1.equals("hola") ||
+                greeting1.equals("ahoj") ||
+                greeting1.equals("czesc")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+    public static Object[] removeEveryOther(Object[] arr) {
+        Object[] newArray = new Object[(arr.length + 1)/ 2];
+        int newIndex = 0;
+        for (int i = 0; i < arr.length; i++){
+            if(i % 2 == 0) {
+                newArray[newIndex] = arr[i];
+                newIndex++;
+            }
+        }
+        return newArray;
+    }
+
+//    Create a method that takes as input a name, city, and state to welcome a person. Note that name will be an array consisting of one or more values that should be joined together with one space between each, and the length of the name array in test cases will vary.
+
+    public String sayHello(String [] name, String city, String state){
+        StringBuilder welcomeString = new StringBuilder();
+        String newString = Arrays.toString(name);
+        String str = newString.replace("[", "").replace("]", "").replace(",", "");
+        welcomeString.append("Hello, " + str + "!" + " Welcome to " + city + ", " + state + "!");
+        return welcomeString.toString();
+    }
+
+//    **Way better solution
+//  public String sayHello(String [] name, String city, String state){
+//    StringBuilder welcomeString = new StringBuilder();
+//    String newString = Arrays.toString(name);
+//        String str = newString.replace("[", "").replace("]", "").replace(",", "");
+//    welcomeString.append("Hello, " + str + "!" + " Welcome to " + city + ", " + state + "!");
+//    return welcomeString.toString();
+//  }
+
+
+
+
 }
+
+
+
 
 
 

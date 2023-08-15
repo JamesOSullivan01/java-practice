@@ -3,6 +3,7 @@ package src;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class JavaLogicPractice {
     //    In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
@@ -562,6 +563,19 @@ public class JavaLogicPractice {
         return (int) Math.floor(liters);
     }
 
+//    Input: Array of elements
+//["h","o","l","a"]
+//    Output: String with comma delimited elements of the array in th same order.
+//            "h,o,l,a"
+    public static String printArray(Object[] array) {
+        StringJoiner joined = new StringJoiner(",");
+
+        for (int i = 0; i < array.length; i++) {
+            joined.add(array[i].toString());
+        }
+
+        return joined.toString();
+    }
 
 }
 

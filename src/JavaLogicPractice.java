@@ -577,6 +577,22 @@ public class JavaLogicPractice {
         return joined.toString();
     }
 
+    public static String updateLight(String current) {
+        String next = "";
+        switch (current){
+            case "green": next = "yellow";
+                break;
+            case "yellow": next = "red";
+                break;
+            case "red": next = "green";
+                break;
+            default: System.out.println("Invaild input");
+
+        }
+        return next;
+    }
+
+
 }
 
 

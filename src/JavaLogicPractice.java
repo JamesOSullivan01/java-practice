@@ -1,5 +1,7 @@
 package src;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -632,6 +634,21 @@ public class JavaLogicPractice {
         public static String remove(String str) {
             return str.substring(1, str.length() - 1);
         }
+//        in this kata, we will make a function to test whether a period is late.
+//Our function will take three parameters:
+//last - The Date object with the date of the last period
+//today - The Date object with the date of the check
+//cycleLength - Integer representing the length of the cycle in days
+//Return true if the number of days passed from last to today is greater than cycleLength. Otherwise, return false.
+    public class PeriodTime {
+        public static boolean periodIsLate(LocalDate last, LocalDate today, int cycleLength) {
+            Period period = Period.between(last, today);
+            System.out.println(period);
+            return period.getDays() + period.getMonths() *30 + period.getYears() * 365 > cycleLength;
+        }
+    }
+
+
     }
 
 
